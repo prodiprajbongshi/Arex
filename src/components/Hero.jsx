@@ -397,7 +397,7 @@ function App() {
 
         <div
           ref={HeroImageWrapper}
-          className="absolute bottom-50 left-10  md:bottom-4 md:left-38   z-20 w-[70%]  md:w-[40%] lg:w-[24%]"
+          className="absolute bottom-30 md:bottom-10 left-10        z-20 w-[70%]  md:w-[40%] lg:w-[24%]"
         >
           <img
             ref={HeroImage}
@@ -436,7 +436,7 @@ function App() {
           {/* ========================================
               BUTTON
           ======================================== */}
-          <div className="pt-116 md:pt-20 ms-6">
+          <div className="pt-136 md:pt-20 ms-6">
             <div className="mt-3 flex items-center gap-4">
               <span className="text-3xl font-semibold text-white">99.985%</span>
 
@@ -517,7 +517,7 @@ function App() {
             absolute
             right-0
             top-1/2
-            z-30
+            z-1
             w-[75%]
             -translate-y-1/2
             pl-32
