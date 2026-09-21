@@ -211,8 +211,8 @@ const ProductGallery = () => {
             border
             border-black/10
             bg-[#dfe1e4]
-            sm:h-[70vh]
-            lg:h-[78vh]
+            sm:h-[60vh]
+            lg:h-[60vh]
           "
         >
           {/* ========================================= */}
@@ -228,7 +228,7 @@ const ProductGallery = () => {
               inset-0
               h-full
               w-full
-              object-cover
+              object-contain
             "
           />
 

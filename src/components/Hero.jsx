@@ -30,6 +30,12 @@ function App() {
 
   useGSAP(
     () => {
+ const mm = gsap.matchMedia();
+
+
+
+
+
       // ========================================
       // HERO INTRO ANIMATION
       // ========================================
@@ -185,6 +191,14 @@ function App() {
         },
       });
 
+    mm.add(
+    {
+      desktop: "(min-width: 1024px)",
+      smallScreen: "(max-width: 1024px)",
+    },
+    (context) => {
+      const { desktop } = context.conditions;
+
       gsap.fromTo(
         HeroImageWrapper.current,
         {
@@ -193,8 +207,8 @@ function App() {
           scale: 1,
         },
         {
-          x: 1100,
-          y: 970,
+          x: desktop ? 1100 : 700,
+          y: desktop ? 970 : 750,
 
           ease: "none",
 
@@ -204,8 +218,14 @@ function App() {
             end: "+=700",
             scrub: 1.2,
           },
-        },
+        }
       );
+    }
+  );
+
+
+
+      
 
       // ========================================
       // CONTENT SCROLL ANIMATION
@@ -223,6 +243,7 @@ function App() {
           scrub: 1,
         },
       });
+       return () => mm.revert();
     },
     {
       scope: HeroRef,
@@ -520,7 +541,7 @@ function App() {
             z-1
             w-[75%]
             -translate-y-1/2
-            pl-32
+            pl-44
             pr-10
             text-white
             lg:pl-64
@@ -986,17 +1007,7 @@ function App() {
             Designed for cleaner living
           </span>
 
-          <span
-            className="
-        text-[10px]
-        font-medium
-        uppercase
-        tracking-[0.3em]
-        text-black/30
-      "
-          >
-            02 / 04
-          </span>
+       
         </div>
       </section>
     </main>

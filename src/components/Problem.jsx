@@ -207,16 +207,7 @@ const Problem = () => {
             </span>
           </div>
 
-          <span
-            className="
-              text-xs
-              font-medium
-              tracking-[0.3em]
-              text-white/30
-            "
-          >
-            02
-          </span>
+          
         </div>
 
         {/* ========================================

@@ -199,13 +199,10 @@ const FinalProduct = () => {
       {/* ================================= */}
 
       <div className="absolute left-6 right-6 top-8 flex items-center justify-between lg:left-16 lg:right-16">
-        <span className="text-[10px] font-medium uppercase tracking-[0.35em] text-black/40">
+        <span className="text-[10px] font-medium uppercase tracking-[0.35em] text-black/60">
           Final Product
         </span>
-
-        <span className="text-[10px] uppercase tracking-[0.3em] text-black/30">
-          AEROX / 01
-        </span>
+ 
       </div>
 
       {/* ================================= */}

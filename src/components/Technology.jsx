@@ -217,16 +217,7 @@ const Technology = () => {
             </span>
           </div>
 
-          <span
-            className="
-              text-xs
-              font-medium
-              tracking-[0.3em]
-              text-white/30
-            "
-          >
-            04
-          </span>
+        
         </div>
 
 
@@ -686,20 +677,7 @@ const Technology = () => {
             "
           >
 
-            <span
-              className="
-                absolute
-                right-6
-                top-6
-                text-xs
-                tracking-[0.25em]
-                text-white/20
-                sm:right-8
-                sm:top-8
-              "
-            >
-              04
-            </span>
+           
 
             <div
               className="
