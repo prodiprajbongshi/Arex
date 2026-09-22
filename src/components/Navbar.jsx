@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activePath, setActivePath] = useState(
-    window.location.pathname
-  );
+  const [activePath, setActivePath] = useState(window.location.pathname);
 
   const { cartCount } = useCart();
 
@@ -67,7 +66,6 @@ const Navbar = () => {
       `}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:h-20 sm:px-6 lg:px-8">
-
         {/* ========================================
             LOGO
         ======================================== */}
@@ -80,13 +78,11 @@ const Navbar = () => {
           DREO<span className="text-cyan-400">.</span>
         </a>
 
-
         {/* ========================================
             DESKTOP NAVIGATION
         ======================================== */}
 
         <div className="hidden items-center gap-6 md:flex lg:gap-8">
-
           {navLinks.map((link) => {
             const active = isActive(link.href);
 
@@ -99,11 +95,7 @@ const Navbar = () => {
                   text-sm font-medium
                   transition-colors duration-300
 
-                  ${
-                    active
-                      ? "text-white"
-                      : "text-gray-400 hover:text-white"
-                  }
+                  ${active ? "text-white" : "text-gray-400 hover:text-white"}
 
                   after:absolute
                   after:-bottom-1
@@ -125,33 +117,30 @@ const Navbar = () => {
                 {link.name}
 
                 {/* Active indicator */}
-                {active  }
+                {active}
               </a>
             );
           })}
-
         </div>
-
 
         {/* ========================================
             DESKTOP ACTIONS
         ======================================== */}
 
         <div className="hidden items-center gap-1 md:flex">
-
-          {/* User */}
-          <button
-            className="
+          {/* User */}.
+          <Link to="/login">
+            <button
+              className="
               rounded-full p-2.5 text-gray-400
               transition-all duration-300
               hover:bg-white/10 hover:text-white
             "
-            aria-label="User Account"
-          >
-            <i className="ri-user-line text-lg" />
-          </button>
-
-
+              aria-label="User Account"
+            >
+              <i className="ri-user-line text-lg" />
+            </button>
+          </Link>
           {/* Cart */}
           <a
             href="/cart"
@@ -178,8 +167,6 @@ const Navbar = () => {
               </span>
             )}
           </a>
-
-
           {/* CTA */}
           <a
             href="/contact"
@@ -195,9 +182,7 @@ const Navbar = () => {
           >
             Let's Talk
           </a>
-
         </div>
-
 
         {/* ========================================
             MOBILE MENU BUTTON
@@ -223,9 +208,7 @@ const Navbar = () => {
             } text-xl transition-transform duration-300`}
           />
         </button>
-
       </div>
-
 
       {/* ========================================
           MOBILE NAVIGATION
@@ -238,17 +221,11 @@ const Navbar = () => {
           ease-in-out
           md:hidden
 
-          ${
-            isOpen
-              ? "max-h-[600px] opacity-100"
-              : "max-h-0 opacity-0"
-          }
+          ${isOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}
         `}
       >
         <div className="border-t border-white/10 bg-black/95 px-5 py-6 backdrop-blur-xl">
-
           <div className="flex flex-col gap-1">
-
             {/* Mobile Links */}
             {navLinks.map((link, i) => {
               const active = isActive(link.href);
@@ -271,14 +248,10 @@ const Navbar = () => {
                     }
                   `}
                   style={{
-                    transitionDelay: isOpen
-                      ? `${i * 50}ms`
-                      : "0ms",
+                    transitionDelay: isOpen ? `${i * 50}ms` : "0ms",
                   }}
                 >
-
                   <span className="flex items-center gap-3">
-
                     {/* Active dot */}
                     <span
                       className={`
@@ -297,19 +270,15 @@ const Navbar = () => {
                     />
 
                     {link.name}
-
                   </span>
-
 
                   {/* Active arrow */}
                   {active && (
                     <i className="ri-arrow-right-s-line text-cyan-400" />
                   )}
-
                 </a>
               );
             })}
-
 
             {/* ========================================
                 MOBILE CART
@@ -329,15 +298,11 @@ const Navbar = () => {
                 hover:text-white
               "
             >
-
               <div className="flex items-center gap-3">
-
                 <i className="ri-shopping-cart-line text-lg" />
 
                 <span>Shopping Cart</span>
-
               </div>
-
 
               {cartCount > 0 && (
                 <span
@@ -354,16 +319,13 @@ const Navbar = () => {
                   {cartCount > 99 ? "99+" : cartCount}
                 </span>
               )}
-
             </a>
-
 
             {/* ========================================
                 MOBILE BOTTOM ACTIONS
             ======================================== */}
 
             <div className="mt-4 flex items-center gap-3 border-t border-white/10 pt-4">
-
               {/* Account */}
               <button
                 className="
@@ -382,7 +344,6 @@ const Navbar = () => {
 
                 <span>Account</span>
               </button>
-
 
               {/* Let's Talk */}
               <a
@@ -403,14 +364,10 @@ const Navbar = () => {
               >
                 Let's Talk
               </a>
-
             </div>
-
           </div>
-
         </div>
       </div>
-
     </nav>
   );
 };

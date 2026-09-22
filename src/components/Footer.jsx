@@ -351,27 +351,27 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-4 text-sm text-white/45">
               <li>
-                <a href="#" className="transition-colors hover:text-white">
+                <Link to="/" className="transition-colors hover:text-white">
                   AEROX
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="transition-colors hover:text-white">
+                <Link to="/technology" className="transition-colors hover:text-white">
                   Technology
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="transition-colors hover:text-white">
+                <Link to="/technology" className="transition-colors hover:text-white">
                   Air Quality
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="transition-colors hover:text-white">
+                <Link to="/about" className="transition-colors hover:text-white">
                   Specifications
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -385,27 +385,27 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-4 text-sm text-white/45">
               <li>
-                <a href="#" className="transition-colors hover:text-white">
+                <Link to="/contact" className="transition-colors hover:text-white">
                   Contact
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="transition-colors hover:text-white">
+                <Link to="/faq" className="transition-colors hover:text-white">
                   FAQ
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="transition-colors hover:text-white">
+                <Link to="/shipping" className="transition-colors hover:text-white">
                   Shipping
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="transition-colors hover:text-white">
+                <Link to="/returns" className="transition-colors hover:text-white">
                   Returns
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -483,17 +483,18 @@ const Footer = () => {
           <span>© 2026 AEROX. All rights reserved.</span>
 
           <div className="flex gap-6">
-            <a href="#" className="transition-colors hover:text-white/60">
-              Privacy
-            </a>
+            <Link to="/privacypolicy" className="transition-colors hover:text-white/60">
+              Privacy - Policy
+            </Link>
 
-            <a href="#" className="transition-colors hover:text-white/60">
-              Terms
-            </a>
+            <Link to="/refundpolicy" className="transition-colors hover:text-white/60">
+              Refund - Policy
+            </Link>
+            <Link to="/returns" className="transition-colors hover:text-white/60">
+              Returns - Policy
+            </Link>
 
-            <a href="#" className="transition-colors hover:text-white/60">
-              Cookies
-            </a>
+           
           </div>
 
           <span>Designed for better breathing</span>
