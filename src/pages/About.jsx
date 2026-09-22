@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
@@ -361,135 +362,313 @@ const About = () => {
           STATS
       ====================================================== */}
 
-      <section className="stats-section border-y border-slate-200 bg-white px-6 py-16 md:px-12 lg:px-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-10 md:grid-cols-4">
-          <div className="about-stat text-center">
-            <p className="text-4xl font-bold tracking-tight md:text-6xl">
-              99.9<span className="text-cyan-500">%</span>
-            </p>
+   
+   <section className="relative overflow-hidden bg-[#f7f9fb] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
 
-            <p className="mt-3 text-sm font-medium text-slate-500">
+  {/* Background */}
+  <div className="pointer-events-none absolute inset-0">
+
+    {/* Soft cyan glow */}
+    <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/10 blur-[140px]" />
+
+    {/* Fine grid */}
+    <div
+      className="absolute inset-0 opacity-[0.025]"
+      style={{
+        backgroundImage: `
+          linear-gradient(#0f172a 1px, transparent 1px),
+          linear-gradient(90deg, #0f172a 1px, transparent 1px)
+        `,
+        backgroundSize: "70px 70px",
+      }}
+    />
+  </div>
+
+  <div className="relative mx-auto max-w-7xl">
+
+    {/* ========================================= */}
+    {/* HEADER */}
+    {/* ========================================= */}
+
+    <div className="mb-14 flex flex-col items-center text-center">
+
+      <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm">
+
+        <span className="relative flex h-2 w-2">
+          <span className="absolute h-full w-full animate-ping rounded-full bg-cyan-400 opacity-60" />
+          <span className="relative h-2 w-2 rounded-full bg-cyan-500" />
+        </span>
+
+        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
+          Engineered Performance
+        </span>
+
+      </div>
+
+      <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-5xl lg:text-6xl">
+        Technology you can
+        <span className="block bg-gradient-to-r from-slate-500 via-slate-800 to-cyan-500 bg-clip-text text-transparent">
+          feel in every breath.
+        </span>
+      </h2>
+
+      <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">
+        Every detail is engineered to deliver cleaner air, intelligent
+        performance, and effortless comfort throughout your home.
+      </p>
+
+    </div>
+
+
+    {/* ========================================= */}
+    {/* STATS */}
+    {/* ========================================= */}
+
+    <div className="relative">
+
+      {/* Center airflow glow */}
+      <div className="pointer-events-none absolute left-1/2 top-1/2 hidden h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-3xl lg:block" />
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+        {/* ================================= */}
+        {/* CARD 01 */}
+        {/* ================================= */}
+
+        <div className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_15px_50px_rgba(15,23,42,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-200 hover:shadow-[0_25px_70px_rgba(6,182,212,0.12)]">
+
+          {/* Number */}
+          <span className="absolute right-6 top-5 text-xs font-medium text-slate-300">
+            01
+          </span>
+
+          {/* Icon */}
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white transition-all duration-500 group-hover:bg-cyan-500 group-hover:shadow-[0_0_25px_rgba(6,182,212,0.35)]">
+            <i className="ri-filter-3-line text-xl" />
+          </div>
+
+          <div className="mt-12">
+
+            <div className="flex items-end gap-1">
+
+              <span className="text-5xl font-semibold tracking-[-0.07em] text-slate-950 sm:text-6xl">
+                99.9
+              </span>
+
+              <span className="mb-1 text-3xl font-semibold text-cyan-500">
+                %
+              </span>
+
+            </div>
+
+            <p className="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
               Particle Filtration
             </p>
-          </div>
 
-          <div className="about-stat text-center">
-            <p className="text-4xl font-bold tracking-tight md:text-6xl">
-              360<span className="text-cyan-500">°</span>
+            <div className="mt-7 h-px w-full bg-slate-100">
+              <div className="h-px w-[92%] bg-gradient-to-r from-cyan-500 to-transparent" />
+            </div>
+
+            <p className="mt-4 text-xs leading-5 text-slate-400">
+              Advanced filtration technology for cleaner indoor air.
             </p>
 
-            <p className="mt-3 text-sm font-medium text-slate-500">
+          </div>
+        </div>
+
+
+        {/* ================================= */}
+        {/* CARD 02 */}
+        {/* ================================= */}
+
+        <div className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_15px_50px_rgba(15,23,42,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-200 hover:shadow-[0_25px_70px_rgba(6,182,212,0.12)]">
+
+          <span className="absolute right-6 top-5 text-xs font-medium text-slate-300">
+            02
+          </span>
+
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white transition-all duration-500 group-hover:bg-cyan-500 group-hover:shadow-[0_0_25px_rgba(6,182,212,0.35)]">
+            <i className="ri-windy-line text-xl" />
+          </div>
+
+          <div className="mt-12">
+
+            <div className="flex items-end gap-1">
+
+              <span className="text-5xl font-semibold tracking-[-0.07em] text-slate-950 sm:text-6xl">
+                360
+              </span>
+
+              <span className="mb-1 text-3xl font-semibold text-cyan-500">
+                °
+              </span>
+
+            </div>
+
+            <p className="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
               Air Intake
             </p>
-          </div>
 
-          <div className="about-stat text-center">
-            <p className="text-4xl font-bold tracking-tight md:text-6xl">
-              H14
+            {/* Airflow */}
+            <div className="mt-7 flex h-6 items-center gap-1">
+
+              <span className="h-1 w-1 rounded-full bg-cyan-400" />
+              <span className="h-px w-7 bg-cyan-200" />
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+              <span className="h-px w-10 bg-cyan-300" />
+              <span className="h-2 w-2 rounded-full bg-cyan-500" />
+              <span className="h-px w-7 bg-cyan-200" />
+              <span className="h-1 w-1 rounded-full bg-cyan-400" />
+
+            </div>
+
+            <p className="mt-4 text-xs leading-5 text-slate-400">
+              Designed to draw air efficiently from every direction.
             </p>
 
-            <p className="mt-3 text-sm font-medium text-slate-500">
+          </div>
+        </div>
+
+
+        {/* ================================= */}
+        {/* CARD 03 */}
+        {/* ================================= */}
+
+        <div className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_15px_50px_rgba(15,23,42,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-200 hover:shadow-[0_25px_70px_rgba(6,182,212,0.12)]">
+
+          <span className="absolute right-6 top-5 text-xs font-medium text-slate-300">
+            03
+          </span>
+
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white transition-all duration-500 group-hover:bg-cyan-500 group-hover:shadow-[0_0_25px_rgba(6,182,212,0.35)]">
+            <i className="ri-shield-check-line text-xl" />
+          </div>
+
+          <div className="mt-12">
+
+            <div className="flex items-end">
+
+              <span className="text-5xl font-semibold tracking-[-0.07em] text-slate-950 sm:text-6xl">
+                H14
+              </span>
+
+            </div>
+
+            <p className="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
               HEPA Technology
             </p>
-          </div>
 
-          <div className="about-stat text-center">
-            <p className="text-4xl font-bold tracking-tight md:text-6xl">
-              24<span className="text-cyan-500">/</span>7
+            {/* Badge */}
+            <div className="mt-7 inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1.5">
+
+              <i className="ri-check-line text-sm text-cyan-500" />
+
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+                Advanced Filter
+              </span>
+
+            </div>
+
+            <p className="mt-4 text-xs leading-5 text-slate-400">
+              High-efficiency filtration engineered for modern homes.
             </p>
 
-            <p className="mt-3 text-sm font-medium text-slate-500">
+          </div>
+        </div>
+
+
+        {/* ================================= */}
+        {/* CARD 04 */}
+        {/* ================================= */}
+
+        <div className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_15px_50px_rgba(15,23,42,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-200 hover:shadow-[0_25px_70px_rgba(6,182,212,0.12)]">
+
+          <span className="absolute right-6 top-5 text-xs font-medium text-slate-300">
+            04
+          </span>
+
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white transition-all duration-500 group-hover:bg-cyan-500 group-hover:shadow-[0_0_25px_rgba(6,182,212,0.35)]">
+            <i className="ri-pulse-line text-xl" />
+          </div>
+
+          <div className="mt-12">
+
+            <div className="flex items-end gap-1">
+
+              <span className="text-5xl font-semibold tracking-[-0.07em] text-slate-950 sm:text-6xl">
+                24
+              </span>
+
+              <span className="mb-1 text-3xl font-semibold text-cyan-500">
+                /7
+              </span>
+
+            </div>
+
+            <p className="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
               Smart Monitoring
             </p>
-          </div>
-        </div>
-      </section>
 
-      {/* =====================================================
-          VALUES
-      ====================================================== */}
+            {/* Status */}
+            <div className="mt-7 flex items-center gap-2">
 
-      <section className="values-section px-6 py-24 md:px-12 lg:px-20 lg:py-32">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-cyan-500">
-              WHAT DRIVES US
+              <span className="relative flex h-2.5 w-2.5">
+
+                <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+
+                <span className="relative h-2.5 w-2.5 rounded-full bg-emerald-500" />
+
+              </span>
+
+              <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-emerald-600">
+                Monitoring Active
+              </span>
+
+            </div>
+
+            <p className="mt-4 text-xs leading-5 text-slate-400">
+              Intelligent sensing continuously tracks your air quality.
             </p>
 
-            <h2 className="text-4xl font-bold tracking-tight md:text-6xl">
-              Built around better living.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-slate-500">
-              We focus on the things that matter most when technology
-              becomes part of your everyday environment.
-            </p>
-          </div>
-
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <div className="value-card rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-2xl text-cyan-500">
-                <i className="ri-focus-3-line" />
-              </div>
-
-              <h3 className="mt-8 text-xl font-bold">
-                Purpose
-              </h3>
-
-              <p className="mt-4 text-sm leading-7 text-slate-500">
-                Every feature exists for a reason: helping people
-                experience cleaner and more comfortable indoor air.
-              </p>
-            </div>
-
-            <div className="value-card rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-2xl text-cyan-500">
-                <i className="ri-lightbulb-flash-line" />
-              </div>
-
-              <h3 className="mt-8 text-xl font-bold">
-                Innovation
-              </h3>
-
-              <p className="mt-4 text-sm leading-7 text-slate-500">
-                We continuously explore better ways to combine
-                hardware, software and intelligent sensing.
-              </p>
-            </div>
-
-            <div className="value-card rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-2xl text-cyan-500">
-                <i className="ri-user-heart-line" />
-              </div>
-
-              <h3 className="mt-8 text-xl font-bold">
-                People
-              </h3>
-
-              <p className="mt-4 text-sm leading-7 text-slate-500">
-                Our products are designed around real homes, real
-                routines and real people.
-              </p>
-            </div>
-
-            <div className="value-card rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-2xl text-cyan-500">
-                <i className="ri-earth-line" />
-              </div>
-
-              <h3 className="mt-8 text-xl font-bold">
-                Responsibility
-              </h3>
-
-              <p className="mt-4 text-sm leading-7 text-slate-500">
-                We aim to create efficient products with thoughtful
-                materials and long-term usability.
-              </p>
-            </div>
           </div>
         </div>
-      </section>
 
+      </div>
+    </div>
+
+
+    {/* ========================================= */}
+    {/* BOTTOM LINE */}
+    {/* ========================================= */}
+
+    <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-6 sm:flex-row">
+
+      <div className="flex items-center gap-3">
+
+        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-cyan-50 text-cyan-500">
+          <i className="ri-sparkling-2-line text-sm" />
+        </span>
+
+        <span className="text-xs font-medium text-slate-500">
+          Precision engineered for modern living
+        </span>
+
+      </div>
+
+      <div className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">
+        <span>Clean</span>
+        <span className="h-1 w-1 rounded-full bg-cyan-400" />
+        <span>Smart</span>
+        <span className="h-1 w-1 rounded-full bg-cyan-400" />
+        <span>Quiet</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    
       {/* =====================================================
           TECHNOLOGY
       ====================================================== */}
@@ -516,74 +695,315 @@ const About = () => {
             </div>
 
             <div className="space-y-4">
-              <div className="technology-item flex gap-6 rounded-3xl border border-white/10 bg-white/[0.04] p-7">
-                <span className="text-3xl font-bold text-cyan-400">
-                  01
-                </span>
 
-                <div>
-                  <h3 className="text-xl font-bold">
-                    360° Air Intake
-                  </h3>
+  {/* ===================== 01 ===================== */}
+  <div className="technology-item group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.06] sm:p-7">
 
-                  <p className="mt-2 leading-7 text-slate-400">
-                    Air enters from multiple directions for efficient
-                    room circulation.
-                  </p>
-                </div>
-              </div>
+    {/* Background number */}
+    <span className="pointer-events-none absolute -right-2 -top-8 select-none text-[130px] font-black leading-none text-white/[0.025] transition-all duration-500 group-hover:text-cyan-400/[0.05]">
+      01
+    </span>
 
-              <div className="technology-item flex gap-6 rounded-3xl border border-white/10 bg-white/[0.04] p-7">
-                <span className="text-3xl font-bold text-cyan-400">
-                  02
-                </span>
+    {/* Glow */}
+    <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-cyan-400/10 blur-[70px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                <div>
-                  <h3 className="text-xl font-bold">
-                    HEPA H14 Filtration
-                  </h3>
+    <div className="relative flex gap-5 sm:gap-6">
 
-                  <p className="mt-2 leading-7 text-slate-400">
-                    High-efficiency filtration helps capture
-                    microscopic airborne particles.
-                  </p>
-                </div>
-              </div>
+      {/* Number / Icon */}
+      <div className="flex shrink-0 flex-col items-center">
 
-              <div className="technology-item flex gap-6 rounded-3xl border border-white/10 bg-white/[0.04] p-7">
-                <span className="text-3xl font-bold text-cyan-400">
-                  03
-                </span>
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 transition-all duration-500 group-hover:scale-110 group-hover:border-cyan-400/40 group-hover:bg-cyan-400/15 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]">
+          <i className="ri-windy-line text-2xl" />
+        </div>
 
-                <div>
-                  <h3 className="text-xl font-bold">
-                    Smart Air Monitoring
-                  </h3>
+        <div className="mt-3 text-[9px] font-bold tracking-[0.2em] text-slate-600">
+          01
+        </div>
 
-                  <p className="mt-2 leading-7 text-slate-400">
-                    Built-in sensors monitor indoor conditions and
-                    help automatically adjust purification.
-                  </p>
-                </div>
-              </div>
+      </div>
 
-              <div className="technology-item flex gap-6 rounded-3xl border border-white/10 bg-white/[0.04] p-7">
-                <span className="text-3xl font-bold text-cyan-400">
-                  04
-                </span>
+      {/* Content */}
+      <div className="min-w-0 flex-1">
 
-                <div>
-                  <h3 className="text-xl font-bold">
-                    Silent Mode
-                  </h3>
+        <div className="flex flex-wrap items-center gap-3">
 
-                  <p className="mt-2 leading-7 text-slate-400">
-                    Designed to maintain comfortable air quality while
-                    minimizing operating noise.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-cyan-400">
+            Airflow
+          </span>
+
+          <span className="h-px w-8 bg-cyan-400/30" />
+
+          <span className="text-[9px] uppercase tracking-widest text-slate-600">
+            360° System
+          </span>
+
+        </div>
+
+        <h3 className="mt-2 text-xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-100 sm:text-2xl">
+          360° Air Intake
+        </h3>
+
+        <p className="mt-2 max-w-xl text-sm leading-6 text-slate-400">
+          Air enters from multiple directions for efficient room
+          circulation and consistent purification.
+        </p>
+
+        {/* Bottom technical detail */}
+        <div className="mt-5 flex items-center gap-3">
+
+          <div className="flex items-center gap-1">
+            <span className="h-1 w-1 rounded-full bg-cyan-400" />
+            <span className="h-1 w-6 rounded-full bg-cyan-400/30" />
+            <span className="h-1 w-3 rounded-full bg-cyan-400/10" />
+          </div>
+
+          <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-slate-600">
+            Continuous airflow
+          </span>
+
+        </div>
+
+      </div>
+
+      {/* Arrow */}
+      <div className="hidden shrink-0 self-center sm:block">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-600 transition-all duration-300 group-hover:border-cyan-400/30 group-hover:text-cyan-400">
+          <i className="ri-arrow-right-up-line" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  {/* ===================== 02 ===================== */}
+  <div className="technology-item group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.06] sm:p-7">
+
+    <span className="pointer-events-none absolute -right-2 -top-8 select-none text-[130px] font-black leading-none text-white/[0.025] transition-all duration-500 group-hover:text-cyan-400/[0.05]">
+      02
+    </span>
+
+    <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-cyan-400/10 blur-[70px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+    <div className="relative flex gap-5 sm:gap-6">
+
+      <div className="flex shrink-0 flex-col items-center">
+
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 transition-all duration-500 group-hover:scale-110 group-hover:border-cyan-400/40 group-hover:bg-cyan-400/15 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]">
+          <i className="ri-filter-3-line text-2xl" />
+        </div>
+
+        <div className="mt-3 text-[9px] font-bold tracking-[0.2em] text-slate-600">
+          02
+        </div>
+
+      </div>
+
+      <div className="min-w-0 flex-1">
+
+        <div className="flex flex-wrap items-center gap-3">
+
+          <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-cyan-400">
+            Filtration
+          </span>
+
+          <span className="h-px w-8 bg-cyan-400/30" />
+
+          <span className="text-[9px] uppercase tracking-widest text-slate-600">
+            H14 HEPA
+          </span>
+
+        </div>
+
+        <h3 className="mt-2 text-xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-100 sm:text-2xl">
+          HEPA H14 Filtration
+        </h3>
+
+        <p className="mt-2 max-w-xl text-sm leading-6 text-slate-400">
+          High-efficiency filtration helps capture microscopic airborne
+          particles and impurities.
+        </p>
+
+        <div className="mt-5 flex items-center gap-3">
+
+          <div className="flex gap-1">
+            <span className="h-1 w-8 rounded-full bg-cyan-400" />
+            <span className="h-1 w-5 rounded-full bg-cyan-400/40" />
+            <span className="h-1 w-3 rounded-full bg-cyan-400/15" />
+          </div>
+
+          <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-slate-600">
+            Multi-stage filtration
+          </span>
+
+        </div>
+
+      </div>
+
+      <div className="hidden shrink-0 self-center sm:block">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-600 transition-all duration-300 group-hover:border-cyan-400/30 group-hover:text-cyan-400">
+          <i className="ri-arrow-right-up-line" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  {/* ===================== 03 ===================== */}
+  <div className="technology-item group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.06] sm:p-7">
+
+    <span className="pointer-events-none absolute -right-2 -top-8 select-none text-[130px] font-black leading-none text-white/[0.025] transition-all duration-500 group-hover:text-cyan-400/[0.05]">
+      03
+    </span>
+
+    <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-cyan-400/10 blur-[70px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+    <div className="relative flex gap-5 sm:gap-6">
+
+      <div className="flex shrink-0 flex-col items-center">
+
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 transition-all duration-500 group-hover:scale-110 group-hover:border-cyan-400/40 group-hover:bg-cyan-400/15 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]">
+          <i className="ri-radar-line text-2xl" />
+        </div>
+
+        <div className="mt-3 text-[9px] font-bold tracking-[0.2em] text-slate-600">
+          03
+        </div>
+
+      </div>
+
+      <div className="min-w-0 flex-1">
+
+        <div className="flex flex-wrap items-center gap-3">
+
+          <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-cyan-400">
+            Intelligence
+          </span>
+
+          <span className="h-px w-8 bg-cyan-400/30" />
+
+          <span className="text-[9px] uppercase tracking-widest text-slate-600">
+            Real-time
+          </span>
+
+        </div>
+
+        <h3 className="mt-2 text-xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-100 sm:text-2xl">
+          Smart Air Monitoring
+        </h3>
+
+        <p className="mt-2 max-w-xl text-sm leading-6 text-slate-400">
+          Built-in sensors monitor indoor conditions and help
+          automatically adjust purification.
+        </p>
+
+        <div className="mt-5 flex items-center gap-3">
+
+          <div className="flex items-center gap-1.5">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
+              <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
+            </span>
+
+            <span className="text-[9px] font-semibold uppercase tracking-widest text-emerald-400">
+              Active
+            </span>
+          </div>
+
+          <span className="text-[9px] uppercase tracking-[0.2em] text-slate-600">
+            Adaptive sensing
+          </span>
+
+        </div>
+
+      </div>
+
+      <div className="hidden shrink-0 self-center sm:block">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-600 transition-all duration-300 group-hover:border-cyan-400/30 group-hover:text-cyan-400">
+          <i className="ri-arrow-right-up-line" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  {/* ===================== 04 ===================== */}
+  <div className="technology-item group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.06] sm:p-7">
+
+    <span className="pointer-events-none absolute -right-2 -top-8 select-none text-[130px] font-black leading-none text-white/[0.025] transition-all duration-500 group-hover:text-cyan-400/[0.05]">
+      04
+    </span>
+
+    <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-cyan-400/10 blur-[70px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+    <div className="relative flex gap-5 sm:gap-6">
+
+      <div className="flex shrink-0 flex-col items-center">
+
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 transition-all duration-500 group-hover:scale-110 group-hover:border-cyan-400/40 group-hover:bg-cyan-400/15 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]">
+          <i className="ri-volume-mute-line text-2xl" />
+        </div>
+
+        <div className="mt-3 text-[9px] font-bold tracking-[0.2em] text-slate-600">
+          04
+        </div>
+
+      </div>
+
+      <div className="min-w-0 flex-1">
+
+        <div className="flex flex-wrap items-center gap-3">
+
+          <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-cyan-400">
+            Acoustics
+          </span>
+
+          <span className="h-px w-8 bg-cyan-400/30" />
+
+          <span className="text-[9px] uppercase tracking-widest text-slate-600">
+            Low Noise
+          </span>
+
+        </div>
+
+        <h3 className="mt-2 text-xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-100 sm:text-2xl">
+          Silent Mode
+        </h3>
+
+        <p className="mt-2 max-w-xl text-sm leading-6 text-slate-400">
+          Designed to maintain comfortable air quality while minimizing
+          operating noise.
+        </p>
+
+        <div className="mt-5 flex items-end gap-1">
+
+          <span className="h-2 w-1 rounded-full bg-cyan-400/30" />
+          <span className="h-4 w-1 rounded-full bg-cyan-400/50" />
+          <span className="h-3 w-1 rounded-full bg-cyan-400/40" />
+          <span className="h-5 w-1 rounded-full bg-cyan-400/70" />
+          <span className="h-2 w-1 rounded-full bg-cyan-400/30" />
+          <span className="h-3 w-1 rounded-full bg-cyan-400/40" />
+
+          <span className="ml-3 text-[9px] font-medium uppercase tracking-[0.2em] text-slate-600">
+            Quiet operation
+          </span>
+
+        </div>
+
+      </div>
+
+      <div className="hidden shrink-0 self-center sm:block">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-600 transition-all duration-300 group-hover:border-cyan-400/30 group-hover:text-cyan-400">
+          <i className="ri-arrow-right-up-line" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
           </div>
         </div>
       </section>

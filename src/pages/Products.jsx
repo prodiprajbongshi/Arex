@@ -1,7 +1,8 @@
-import {   useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,37 +34,25 @@ export const Products = () => {
   const ctaRef = useRef(null);
 
   const addTechnologyCard = (el) => {
-    if (
-      el &&
-      !technologyCardsRef.current.includes(el)
-    ) {
+    if (el && !technologyCardsRef.current.includes(el)) {
       technologyCardsRef.current.push(el);
     }
   };
 
   const addFeatureCard = (el) => {
-    if (
-      el &&
-      !featureCardsRef.current.includes(el)
-    ) {
+    if (el && !featureCardsRef.current.includes(el)) {
       featureCardsRef.current.push(el);
     }
   };
 
   const addSpecItem = (el) => {
-    if (
-      el &&
-      !specItemsRef.current.includes(el)
-    ) {
+    if (el && !specItemsRef.current.includes(el)) {
       specItemsRef.current.push(el);
     }
   };
 
   const addParticle = (el) => {
-    if (
-      el &&
-      !particlesRef.current.includes(el)
-    ) {
+    if (el && !particlesRef.current.includes(el)) {
       particlesRef.current.push(el);
     }
   };
@@ -96,7 +85,7 @@ export const Products = () => {
             duration: 1,
             stagger: 0.12,
           },
-          "-=0.3"
+          "-=0.3",
         )
         .from(
           ".product-description",
@@ -105,7 +94,7 @@ export const Products = () => {
             opacity: 0,
             duration: 0.8,
           },
-          "-=0.5"
+          "-=0.5",
         )
         .from(
           ".product-actions",
@@ -114,7 +103,7 @@ export const Products = () => {
             opacity: 0,
             duration: 0.7,
           },
-          "-=0.4"
+          "-=0.4",
         )
         .from(
           productHeroRef.current,
@@ -125,7 +114,7 @@ export const Products = () => {
             duration: 1.4,
             ease: "power3.out",
           },
-          "-=1"
+          "-=1",
         );
 
       /*
@@ -140,40 +129,6 @@ export const Products = () => {
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-      });
-
-      /*
-      ================================================================
-      HERO SCROLL
-      ================================================================
-      */
-
-      gsap.to(productHeroRef.current, {
-        y: 500,
-        x: 250,
-        scale: 0.65,
-        rotate: 8,
-        ease: "none",
-
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 1.3,
-        },
-      });
-
-      gsap.to(heroContentRef.current, {
-        y: -150,
-        opacity: 0,
-        ease: "none",
-
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top top",
-          end: "70% top",
-          scrub: 1,
-        },
       });
 
       /*
@@ -217,29 +172,22 @@ export const Products = () => {
         scrollTrigger: {
           trigger: showcaseRef.current,
           start: "top 70%",
-          toggleActions:
-            "play none none reverse",
+          toggleActions: "play none none reverse",
         },
       });
 
-      gsap.from(
-        showcaseRef.current.querySelectorAll(
-          ".showcase-item"
-        ),
-        {
-          y: 60,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.15,
+      gsap.from(showcaseRef.current.querySelectorAll(".showcase-item"), {
+        y: 60,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
 
-          scrollTrigger: {
-            trigger: showcaseRef.current,
-            start: "top 70%",
-            toggleActions:
-              "play none none reverse",
-          },
-        }
-      );
+        scrollTrigger: {
+          trigger: showcaseRef.current,
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+      });
 
       /*
       ================================================================
@@ -258,8 +206,7 @@ export const Products = () => {
         scrollTrigger: {
           trigger: technologyRef.current,
           start: "top 75%",
-          toggleActions:
-            "play none none reverse",
+          toggleActions: "play none none reverse",
         },
       });
 
@@ -277,8 +224,7 @@ export const Products = () => {
         scrollTrigger: {
           trigger: purificationRef.current,
           start: "top 70%",
-          toggleActions:
-            "play none none reverse",
+          toggleActions: "play none none reverse",
         },
       });
 
@@ -290,8 +236,7 @@ export const Products = () => {
         scrollTrigger: {
           trigger: purificationRef.current,
           start: "top 65%",
-          toggleActions:
-            "play none none reverse",
+          toggleActions: "play none none reverse",
         },
       });
 
@@ -303,8 +248,7 @@ export const Products = () => {
         scrollTrigger: {
           trigger: purificationRef.current,
           start: "top 65%",
-          toggleActions:
-            "play none none reverse",
+          toggleActions: "play none none reverse",
         },
       });
 
@@ -314,18 +258,16 @@ export const Products = () => {
       ================================================================
       */
 
-      particlesRef.current.forEach(
-        (particle, index) => {
-          gsap.to(particle, {
-            x: 500,
-            opacity: 0,
-            duration: 2.5 + index * 0.15,
-            repeat: -1,
-            delay: index * 0.25,
-            ease: "power1.inOut",
-          });
-        }
-      );
+      particlesRef.current.forEach((particle, index) => {
+        gsap.to(particle, {
+          x: 500,
+          opacity: 0,
+          duration: 2.5 + index * 0.15,
+          repeat: -1,
+          delay: index * 0.25,
+          ease: "power1.inOut",
+        });
+      });
 
       /*
       ================================================================
@@ -344,8 +286,7 @@ export const Products = () => {
         scrollTrigger: {
           trigger: featuresRef.current,
           start: "top 75%",
-          toggleActions:
-            "play none none reverse",
+          toggleActions: "play none none reverse",
         },
       });
 
@@ -364,8 +305,7 @@ export const Products = () => {
         scrollTrigger: {
           trigger: specsRef.current,
           start: "top 80%",
-          toggleActions:
-            "play none none reverse",
+          toggleActions: "play none none reverse",
         },
       });
 
@@ -384,8 +324,7 @@ export const Products = () => {
         scrollTrigger: {
           trigger: ctaRef.current,
           start: "top 80%",
-          toggleActions:
-            "play none none reverse",
+          toggleActions: "play none none reverse",
         },
       });
 
@@ -393,14 +332,11 @@ export const Products = () => {
     },
     {
       scope: mainRef,
-    }
+    },
   );
 
   return (
-    <main
-      ref={mainRef}
-      className="overflow-hidden bg-[#f5f7f8] text-slate-950"
-    >
+    <main ref={mainRef} className="overflow-hidden bg-[#f5f7f8] text-slate-950">
       {/* =========================================================
           HERO
       ========================================================= */}
@@ -413,15 +349,9 @@ export const Products = () => {
 
         <div
           className="
-            hero-glow-one
-            absolute
-            -left-40
-            -top-40
-            h-[600px]
-            w-[600px]
-            rounded-full
-            bg-cyan-400/20
-            blur-[140px]
+         
+           
+            
           "
         />
 
@@ -498,9 +428,7 @@ export const Products = () => {
                 lg:text-8xl
               "
             >
-              <span className="product-title-line block">
-                Pure air.
-              </span>
+              <span className="product-title-line block">Pure air.</span>
 
               <span
                 className="
@@ -528,9 +456,8 @@ export const Products = () => {
                 text-slate-300
               "
             >
-              Experience intelligent air purification
-              designed for modern living. AEROX combines
-              advanced filtration, smart monitoring, and
+              Experience intelligent air purification designed for modern
+              living. AEROX combines advanced filtration, smart monitoring, and
               whisper-quiet performance.
             </p>
 
@@ -544,8 +471,9 @@ export const Products = () => {
                 gap-4
               "
             >
-              <button
-                className="
+              <Link to="/shop">
+                <button
+                  className="
                   group
                   flex
                   items-center
@@ -561,22 +489,23 @@ export const Products = () => {
                   hover:-translate-y-1
                   hover:shadow-2xl
                 "
-              >
-                Buy AEROX
-
-                <i
-                  className="
+                >
+                  Buy AEROX
+                  <i
+                    className="
                     ri-arrow-right-up-line
                     transition-transform
                     duration-300
                     group-hover:translate-x-1
                     group-hover:-translate-y-1
                   "
-                />
-              </button>
+                  />
+                </button>
+              </Link>
 
-              <button
-                className="
+              <Link to="/technology">
+                <button
+                  className="
                   rounded-full
                   border
                   border-white/20
@@ -590,9 +519,10 @@ export const Products = () => {
                   duration-300
                   hover:bg-white/10
                 "
-              >
-                Explore technology
-              </button>
+                >
+                  Explore technology
+                </button>
+              </Link>
             </div>
 
             {/* Rating */}
@@ -607,7 +537,7 @@ export const Products = () => {
                 text-slate-400
               "
             >
-              <div className="flex text-cyan-300">
+              <div className="flex text-gray-400">
                 <i className="ri-star-fill" />
                 <i className="ri-star-fill" />
                 <i className="ri-star-fill" />
@@ -615,9 +545,7 @@ export const Products = () => {
                 <i className="ri-star-half-fill" />
               </div>
 
-              <span>
-                4.9 / 5 · 2,400+ reviews
-              </span>
+              <span>4.8 / 1,400+ reviews</span>
             </div>
           </div>
 
@@ -635,10 +563,7 @@ export const Products = () => {
               lg:block
             "
           >
-            <div
-              ref={productHeroRef}
-              className="relative"
-            >
+            <div ref={productHeroRef} className="relative">
               <div
                 className="
                   absolute
@@ -655,7 +580,7 @@ export const Products = () => {
                 className="
                   relative
                   z-10
-                  w-[620px]
+                  w-[420px]
                   max-w-none
                   drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)]
                 "
@@ -719,9 +644,7 @@ export const Products = () => {
               "
             >
               Powerful inside.
-              <span className="block text-slate-400">
-                Beautiful outside.
-              </span>
+              <span className="block text-slate-400">Beautiful outside.</span>
             </h2>
 
             <p
@@ -734,38 +657,195 @@ export const Products = () => {
                 text-slate-600
               "
             >
-              AEROX was engineered to disappear into
-              your living space while delivering powerful
-              purification exactly where you need it.
+              AEROX was engineered to disappear into your living space while
+              delivering powerful purification exactly where you need it.
             </p>
 
-            <div className="mt-10 grid grid-cols-2 gap-5">
+            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+              {/* ========================================
+      FILTRATION CARD
+  ======================================== */}
+              <div
+                className="
+      showcase-item group relative overflow-hidden
+      rounded-[1.5rem]
+      border border-slate-200
+      bg-white
+      p-6
+      shadow-sm
+      transition-all duration-500
+      hover:-translate-y-1
+      hover:border-cyan-200
+      hover:shadow-[0_20px_50px_rgba(6,182,212,0.12)]
+    "
+              >
+                {/* Background Glow */}
+                <div
+                  className="
+        absolute -right-10 -top-10
+        h-32 w-32
+        rounded-full
+        bg-cyan-100/70
+        blur-2xl
+        transition-all duration-500
+        group-hover:scale-150
+      "
+                />
 
-              <div className="showcase-item rounded-2xl border border-slate-200 bg-white p-6">
-                <p className="text-3xl font-semibold">
-                  99.99%
-                </p>
+                {/* Decorative Circle */}
+                <div
+                  className="
+        absolute right-5 top-5
+        flex h-12 w-12
+        items-center justify-center
+        rounded-full
+        border border-cyan-100
+        bg-cyan-50
+        text-cyan-500
+        transition-all duration-500
+        group-hover:rotate-12
+        group-hover:bg-cyan-500
+        group-hover:text-white
+      "
+                >
+                  <i className="ri-filter-3-line text-xl" />
+                </div>
 
-                <p className="mt-2 text-sm text-slate-500">
-                  Particle filtration
-                </p>
+                {/* Content */}
+                <div className="relative">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                    Filtration
+                  </p>
+
+                  <div className="mt-5 flex items-end gap-1">
+                    <p className="text-4xl font-bold tracking-tight text-slate-950">
+                      99.99
+                    </p>
+
+                    <span className="mb-1 text-xl font-semibold text-cyan-500">
+                      %
+                    </span>
+                  </div>
+
+                  <p className="mt-2 text-sm font-medium text-slate-500">
+                    Particle filtration
+                  </p>
+
+                  {/* Progress */}
+                  <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      className="
+            h-full w-[99.99%]
+            rounded-full
+            bg-gradient-to-r
+            from-cyan-400
+            to-blue-500
+            transition-all duration-700
+            group-hover:shadow-[0_0_12px_rgba(6,182,212,0.6)]
+          "
+                    />
+                  </div>
+
+                  <div className="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+                    <span>Advanced HEPA filtration</span>
+                    <span>99.99%</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="showcase-item rounded-2xl border border-slate-200 bg-white p-6">
-                <p className="text-3xl font-semibold">
-                  360°
-                </p>
+              {/* ========================================
+      AIR INTAKE CARD
+  ======================================== */}
+              <div
+                className="
+      showcase-item group relative overflow-hidden
+      rounded-[1.5rem]
+      border border-slate-200
+      bg-white
+      p-6
+      shadow-sm
+      transition-all duration-500
+      hover:-translate-y-1
+      hover:border-blue-200
+      hover:shadow-[0_20px_50px_rgba(59,130,246,0.12)]
+    "
+              >
+                {/* Background Glow */}
+                <div
+                  className="
+        absolute -right-10 -top-10
+        h-32 w-32
+        rounded-full
+        bg-blue-100/70
+        blur-2xl
+        transition-all duration-500
+        group-hover:scale-150
+      "
+                />
 
-                <p className="mt-2 text-sm text-slate-500">
-                  Air intake
-                </p>
+                {/* Decorative Circle */}
+                <div
+                  className="
+        absolute right-5 top-5
+        flex h-12 w-12
+        items-center justify-center
+        rounded-full
+        border border-blue-100
+        bg-blue-50
+        text-blue-500
+        transition-all duration-500
+        group-hover:rotate-12
+        group-hover:bg-blue-500
+        group-hover:text-white
+      "
+                >
+                  <i className="ri-windy-line text-xl" />
+                </div>
+
+                {/* Content */}
+                <div className="relative">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                    Airflow
+                  </p>
+
+                  <div className="mt-5 flex items-end gap-2">
+                    <p className="text-4xl font-bold tracking-tight text-slate-950">
+                      360
+                    </p>
+
+                    <span className="mb-1 text-xl font-semibold text-blue-500">
+                      °
+                    </span>
+                  </div>
+
+                  <p className="mt-2 text-sm font-medium text-slate-500">
+                    Air intake
+                  </p>
+
+                  {/* Circular airflow visual */}
+                  <div className="mt-5 flex items-center gap-3">
+                    <div className="relative flex h-8 w-8 items-center justify-center">
+                      <div className="absolute inset-0 animate-spin rounded-full border border-dashed border-blue-300" />
+
+                      <i className="ri-refresh-line text-sm text-blue-500" />
+                    </div>
+
+                    <span className="text-[11px] text-slate-400">
+                      Omnidirectional airflow
+                    </span>
+                  </div>
+
+                  <div className="mt-4 flex items-center gap-1">
+                    <span className="h-1.5 flex-1 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400" />
+                    <span className="h-1.5 w-4 rounded-full bg-slate-100" />
+                    <span className="h-1.5 w-2 rounded-full bg-slate-100" />
+                  </div>
+                </div>
               </div>
-
             </div>
           </div>
 
           <div className="relative flex justify-center">
-
             <div
               ref={showcaseProductRef}
               className="
@@ -816,7 +896,6 @@ export const Products = () => {
         "
       >
         <div className="mx-auto max-w-7xl">
-
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
               Technology
@@ -848,7 +927,6 @@ export const Products = () => {
               lg:grid-cols-4
             "
           >
-
             <div
               ref={addTechnologyCard}
               className="
@@ -881,9 +959,8 @@ export const Products = () => {
               </h3>
 
               <p className="mt-3 leading-7 text-slate-400">
-                Advanced multi-layer filtration captures
-                microscopic particles and airborne
-                pollutants.
+                Advanced multi-layer filtration captures microscopic particles
+                and airborne pollutants.
               </p>
             </div>
 
@@ -919,9 +996,8 @@ export const Products = () => {
               </h3>
 
               <p className="mt-3 leading-7 text-slate-400">
-                Draws polluted air from every direction
-                for faster and more consistent
-                purification.
+                Draws polluted air from every direction for faster and more
+                consistent purification.
               </p>
             </div>
 
@@ -957,8 +1033,8 @@ export const Products = () => {
               </h3>
 
               <p className="mt-3 leading-7 text-slate-400">
-                Ultra-quiet operation lets you sleep,
-                work, and relax without distraction.
+                Ultra-quiet operation lets you sleep, work, and relax without
+                distraction.
               </p>
             </div>
 
@@ -994,11 +1070,10 @@ export const Products = () => {
               </h3>
 
               <p className="mt-3 leading-7 text-slate-400">
-                Real-time air quality monitoring
-                automatically adjusts purification.
+                Real-time air quality monitoring automatically adjusts
+                purification.
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -1020,7 +1095,6 @@ export const Products = () => {
         "
       >
         <div className="mx-auto max-w-7xl">
-
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600">
               Air purification
@@ -1036,9 +1110,7 @@ export const Products = () => {
               "
             >
               Watch the air
-              <span className="block text-slate-400">
-                become cleaner.
-              </span>
+              <span className="block text-slate-400">become cleaner.</span>
             </h2>
           </div>
 
@@ -1054,7 +1126,6 @@ export const Products = () => {
               gap-8
             "
           >
-
             {/* Dirty Air */}
 
             <div
@@ -1077,9 +1148,7 @@ export const Products = () => {
                 <i className="ri-cloud-windy-line text-slate-500" />
               </div>
 
-              <p className="mt-4 font-semibold">
-                Polluted air
-              </p>
+              <p className="mt-4 font-semibold">Polluted air</p>
 
               <p className="mt-1 text-sm text-slate-500">
                 Dust · Smoke · Pollen
@@ -1168,9 +1237,7 @@ export const Products = () => {
                 <i className="ri-leaf-line" />
               </div>
 
-              <p className="mt-4 font-semibold">
-                Clean air
-              </p>
+              <p className="mt-4 font-semibold">Clean air</p>
 
               <p className="mt-1 text-sm text-slate-500">
                 Fresh · Pure · Balanced
@@ -1218,7 +1285,6 @@ export const Products = () => {
                 />
               ))}
             </div>
-
           </div>
         </div>
       </section>
@@ -1238,7 +1304,6 @@ export const Products = () => {
         "
       >
         <div className="mx-auto max-w-7xl">
-
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600">
               Smart features
@@ -1254,191 +1319,460 @@ export const Products = () => {
               "
             >
               More than a purifier.
-              <span className="block text-slate-400">
-                Your air companion.
-              </span>
+              <span className="block text-slate-400">Your air companion.</span>
             </h2>
           </div>
 
-          <div
-            className="
-              mt-16
-              grid
-              gap-6
-              md:grid-cols-2
-            "
-          >
+          {/* cards  */}
+          <div className="mt-16 grid gap-6 md:grid-cols-2">
+            {/* ========================================
+      CARD 01 — SMART APP
+  ======================================== */}
 
             <div
               ref={addFeatureCard}
               className="
-                min-h-[320px]
-                rounded-[2rem]
-                bg-white
-                p-8
-                shadow-sm
-              "
+      group relative min-h-[360px]
+      overflow-hidden rounded-[2rem]
+      border border-slate-200
+      bg-white p-8
+      shadow-sm
+      transition-all duration-500
+      hover:-translate-y-2
+      hover:border-cyan-200
+      hover:shadow-[0_25px_70px_rgba(15,23,42,0.10)]
+    "
             >
+              {/* Background Number */}
+              <span
+                className="
+        pointer-events-none absolute
+        -right-3 -top-8
+        text-[150px] font-black
+        leading-none
+        text-slate-50
+        transition-all duration-500
+        group-hover:text-cyan-50
+        group-hover:scale-110
+      "
+              >
+                01
+              </span>
+
+              {/* Glow */}
               <div
                 className="
-                  flex
-                  h-14
-                  w-14
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  bg-slate-950
-                  text-xl
-                  text-cyan-300
-                "
-              >
-                <i className="ri-smartphone-line" />
-              </div>
+        pointer-events-none absolute
+        -right-20 -top-20
+        h-52 w-52
+        rounded-full
+        bg-cyan-300/20
+        blur-[70px]
+        transition-all duration-500
+        group-hover:bg-cyan-300/30
+      "
+              />
 
-              <h3 className="mt-10 text-2xl font-semibold">
-                Control from anywhere
-              </h3>
+              <div className="relative z-10">
+                {/* Top Row */}
+                <div className="flex items-start justify-between">
+                  <div
+                    className="
+            flex h-16 w-16
+            items-center justify-center
+            rounded-2xl
+            bg-slate-950
+            text-2xl text-cyan-300
+            shadow-lg shadow-slate-950/10
+            transition-all duration-500
+            group-hover:scale-110
+            group-hover:rotate-3
+          "
+                  >
+                    <i className="ri-smartphone-line" />
+                  </div>
 
-              <p className="mt-4 max-w-md leading-7 text-slate-500">
-                Monitor your air quality and control
-                purification directly from your phone.
-              </p>
+                  <span
+                    className="
+            rounded-full
+            border border-slate-200
+            bg-slate-50
+            px-3 py-1.5
+            text-[10px] font-semibold
+            uppercase tracking-[0.2em]
+            text-slate-400
+          "
+                  >
+                    Smart
+                  </span>
+                </div>
 
-              <div className="mt-8 flex gap-2">
-                <span className="rounded-full bg-slate-100 px-4 py-2 text-xs">
-                  iOS
-                </span>
+                {/* Title */}
+                <h3 className="mt-10 text-2xl font-semibold tracking-tight text-slate-950">
+                  Control from anywhere
+                </h3>
 
-                <span className="rounded-full bg-slate-100 px-4 py-2 text-xs">
-                  Android
-                </span>
+                <p className="mt-4 max-w-md text-sm leading-7 text-slate-500">
+                  Monitor your air quality and control purification directly
+                  from your phone, wherever you are.
+                </p>
 
-                <span className="rounded-full bg-slate-100 px-4 py-2 text-xs">
-                  Wi-Fi
-                </span>
+                {/* Platform Tags */}
+                <div className="mt-8 flex flex-wrap gap-2">
+                  <span className="rounded-full bg-slate-100 px-4 py-2 text-xs font-medium text-slate-600">
+                    <i className="ri-apple-line mr-1" />
+                    iOS
+                  </span>
+
+                  <span className="rounded-full bg-slate-100 px-4 py-2 text-xs font-medium text-slate-600">
+                    <i className="ri-android-line mr-1" />
+                    Android
+                  </span>
+
+                  <span className="rounded-full bg-cyan-50 px-4 py-2 text-xs font-medium text-cyan-600">
+                    <i className="ri-wifi-line mr-1" />
+                    Wi-Fi
+                  </span>
+                </div>
+
+                {/* Bottom indicator */}
+                <div className="absolute bottom-0 left-0 h-1 w-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-500 group-hover:w-full" />
               </div>
             </div>
+
+            {/* ========================================
+      CARD 02 — VOICE CONTROL
+  ======================================== */}
 
             <div
               ref={addFeatureCard}
               className="
-                min-h-[320px]
-                rounded-[2rem]
-                bg-slate-950
-                p-8
-                text-white
-              "
+      group relative min-h-[360px]
+      overflow-hidden rounded-[2rem]
+      bg-slate-950 p-8
+      text-white
+      shadow-xl shadow-slate-950/10
+      transition-all duration-500
+      hover:-translate-y-2
+      hover:shadow-[0_30px_80px_rgba(2,6,23,0.30)]
+    "
             >
+              {/* Background Number */}
+              <span
+                className="
+        pointer-events-none absolute
+        -right-3 -top-8
+        text-[150px] font-black
+        leading-none
+        text-white/[0.025]
+        transition-all duration-500
+        group-hover:scale-110
+        group-hover:text-cyan-300/[0.05]
+      "
+              >
+                02
+              </span>
+
+              {/* Glow */}
               <div
                 className="
-                  flex
-                  h-14
-                  w-14
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  bg-cyan-400/10
-                  text-xl
-                  text-cyan-300
-                "
-              >
-                <i className="ri-mic-line" />
-              </div>
+        pointer-events-none absolute
+        -right-20 -top-20
+        h-64 w-64
+        rounded-full
+        bg-cyan-400/10
+        blur-[90px]
+        transition-all duration-500
+        group-hover:bg-cyan-400/20
+      "
+              />
 
-              <h3 className="mt-10 text-2xl font-semibold">
-                Voice control
-              </h3>
+              <div className="relative z-10">
+                <div className="flex items-start justify-between">
+                  <div
+                    className="
+            flex h-16 w-16
+            items-center justify-center
+            rounded-2xl
+            border border-cyan-300/20
+            bg-cyan-400/10
+            text-2xl text-cyan-300
+            transition-all duration-500
+            group-hover:scale-110
+            group-hover:rotate-3
+          "
+                  >
+                    <i className="ri-mic-line" />
+                  </div>
 
-              <p className="mt-4 max-w-md leading-7 text-slate-400">
-                Connect AEROX with your smart home and
-                control purification with simple voice
-                commands.
-              </p>
+                  <span
+                    className="
+            rounded-full
+            border border-white/10
+            bg-white/5
+            px-3 py-1.5
+            text-[10px] font-semibold
+            uppercase tracking-[0.2em]
+            text-slate-400
+          "
+                  >
+                    Voice
+                  </span>
+                </div>
 
-              <div className="mt-8 flex gap-2">
-                <span className="rounded-full bg-white/10 px-4 py-2 text-xs">
-                  Alexa
-                </span>
+                <h3 className="mt-10 text-2xl font-semibold tracking-tight">
+                  Voice control
+                </h3>
 
-                <span className="rounded-full bg-white/10 px-4 py-2 text-xs">
-                  Google Home
-                </span>
+                <p className="mt-4 max-w-md text-sm leading-7 text-slate-400">
+                  Connect AEROX with your smart home and control purification
+                  using simple, natural voice commands.
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-2">
+                  <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-slate-300">
+                    <i className="ri-amazon-line mr-1" />
+                    Alexa
+                  </span>
+
+                  <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-slate-300">
+                    <i className="ri-google-line mr-1" />
+                    Google Home
+                  </span>
+                </div>
+
+                {/* Voice Wave */}
+                <div className="mt-8 flex h-8 items-center gap-1">
+                  <span className="h-3 w-1 rounded-full bg-cyan-400/40" />
+                  <span className="h-6 w-1 rounded-full bg-cyan-400/60" />
+                  <span className="h-8 w-1 rounded-full bg-cyan-400" />
+                  <span className="h-5 w-1 rounded-full bg-cyan-400/70" />
+                  <span className="h-3 w-1 rounded-full bg-cyan-400/40" />
+                  <span className="h-7 w-1 rounded-full bg-cyan-400/70" />
+                  <span className="h-4 w-1 rounded-full bg-cyan-400/40" />
+                </div>
               </div>
             </div>
+
+            {/* ========================================
+      CARD 03 — AIR SENSING
+  ======================================== */}
 
             <div
               ref={addFeatureCard}
               className="
-                min-h-[320px]
-                rounded-[2rem]
-                bg-white
-                p-8
-                shadow-sm
-              "
+      group relative min-h-[360px]
+      overflow-hidden rounded-[2rem]
+      border border-slate-200
+      bg-white p-8
+      shadow-sm
+      transition-all duration-500
+      hover:-translate-y-2
+      hover:border-cyan-200
+      hover:shadow-[0_25px_70px_rgba(15,23,42,0.10)]
+    "
             >
+              {/* Background Number */}
+              <span
+                className="
+        pointer-events-none absolute
+        -right-3 -top-8
+        text-[150px] font-black
+        leading-none
+        text-slate-50
+        transition-all duration-500
+        group-hover:text-cyan-50
+        group-hover:scale-110
+      "
+              >
+                03
+              </span>
+
+              {/* Glow */}
               <div
                 className="
-                  flex
-                  h-14
-                  w-14
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  bg-slate-950
-                  text-xl
-                  text-cyan-300
-                "
-              >
-                <i className="ri-sun-foggy-line" />
+        pointer-events-none absolute
+        -left-20 bottom-0
+        h-52 w-52
+        rounded-full
+        bg-cyan-200/20
+        blur-[70px]
+        transition-all duration-500
+        group-hover:bg-cyan-300/30
+      "
+              />
+
+              <div className="relative z-10">
+                <div className="flex items-start justify-between">
+                  <div
+                    className="
+            flex h-16 w-16
+            items-center justify-center
+            rounded-2xl
+            bg-slate-950
+            text-2xl text-cyan-300
+            shadow-lg
+            transition-all duration-500
+            group-hover:scale-110
+            group-hover:rotate-3
+          "
+                  >
+                    <i className="ri-sun-foggy-line" />
+                  </div>
+
+                  <span
+                    className="
+            rounded-full
+            border border-slate-200
+            bg-slate-50
+            px-3 py-1.5
+            text-[10px] font-semibold
+            uppercase tracking-[0.2em]
+            text-slate-400
+          "
+                  >
+                    AI Sensor
+                  </span>
+                </div>
+
+                <h3 className="mt-10 text-2xl font-semibold tracking-tight text-slate-950">
+                  Automatic air sensing
+                </h3>
+
+                <p className="mt-4 max-w-md text-sm leading-7 text-slate-500">
+                  Intelligent sensors continuously monitor your environment and
+                  automatically adjust purification power when air quality
+                  changes.
+                </p>
+
+                {/* Sensor visualization */}
+                <div className="mt-8 flex items-center gap-4">
+                  <div className="relative flex h-10 w-10 items-center justify-center">
+                    <span className="absolute inset-0 animate-ping rounded-full bg-cyan-400/20" />
+                    <span className="relative h-3 w-3 rounded-full bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.8)]" />
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-semibold text-slate-700">
+                      AIR QUALITY
+                    </p>
+
+                    <p className="mt-1 text-xs text-emerald-500">
+                      Monitoring in real time
+                    </p>
+                  </div>
+                </div>
               </div>
-
-              <h3 className="mt-10 text-2xl font-semibold">
-                Automatic air sensing
-              </h3>
-
-              <p className="mt-4 max-w-md leading-7 text-slate-500">
-                Intelligent sensors continuously monitor
-                your environment and automatically adjust
-                purification power.
-              </p>
             </div>
+
+            {/* ========================================
+      CARD 04 — WHISPER QUIET
+  ======================================== */}
 
             <div
               ref={addFeatureCard}
               className="
-                min-h-[320px]
-                rounded-[2rem]
-                bg-white
-                p-8
-                shadow-sm
-              "
+      group relative min-h-[360px]
+      overflow-hidden rounded-[2rem]
+      border border-slate-200
+      bg-white p-8
+      shadow-sm
+      transition-all duration-500
+      hover:-translate-y-2
+      hover:border-blue-200
+      hover:shadow-[0_25px_70px_rgba(59,130,246,0.10)]
+    "
             >
+              {/* Background Number */}
+              <span
+                className="
+        pointer-events-none absolute
+        -right-3 -top-8
+        text-[150px] font-black
+        leading-none
+        text-slate-50
+        transition-all duration-500
+        group-hover:text-blue-50
+        group-hover:scale-110
+      "
+              >
+                04
+              </span>
+
+              {/* Glow */}
               <div
                 className="
-                  flex
-                  h-14
-                  w-14
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  bg-slate-950
-                  text-xl
-                  text-cyan-300
-                "
-              >
-                <i className="ri-volume-mute-line" />
+        pointer-events-none absolute
+        -right-20 bottom-0
+        h-52 w-52
+        rounded-full
+        bg-blue-200/20
+        blur-[70px]
+        transition-all duration-500
+        group-hover:bg-blue-300/30
+      "
+              />
+
+              <div className="relative z-10">
+                <div className="flex items-start justify-between">
+                  <div
+                    className="
+            flex h-16 w-16
+            items-center justify-center
+            rounded-2xl
+            bg-slate-950
+            text-2xl text-cyan-300
+            shadow-lg
+            transition-all duration-500
+            group-hover:scale-110
+            group-hover:rotate-3
+          "
+                  >
+                    <i className="ri-volume-mute-line" />
+                  </div>
+
+                  <span
+                    className="
+            rounded-full
+            border border-slate-200
+            bg-slate-50
+            px-3 py-1.5
+            text-[10px] font-semibold
+            uppercase tracking-[0.2em]
+            text-slate-400
+          "
+                  >
+                    Silent
+                  </span>
+                </div>
+
+                <h3 className="mt-10 text-2xl font-semibold tracking-tight text-slate-950">
+                  Whisper quiet
+                </h3>
+
+                <p className="mt-4 max-w-md text-sm leading-7 text-slate-500">
+                  Designed for bedrooms, offices, and living spaces with minimal
+                  operating noise, day or night.
+                </p>
+
+                {/* Sound visualization */}
+                <div className="mt-8">
+                  <div className="flex items-end gap-1.5">
+                    <span className="h-2 w-1.5 rounded-full bg-cyan-400" />
+                    <span className="h-3 w-1.5 rounded-full bg-cyan-400" />
+                    <span className="h-4 w-1.5 rounded-full bg-cyan-400" />
+                    <span className="h-3 w-1.5 rounded-full bg-cyan-400" />
+                    <span className="h-2 w-1.5 rounded-full bg-cyan-400" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
+
+                    <span className="ml-3 text-xs text-slate-400">
+                      Ultra-low noise
+                    </span>
+                  </div>
+                </div>
               </div>
-
-              <h3 className="mt-10 text-2xl font-semibold">
-                Whisper quiet
-              </h3>
-
-              <p className="mt-4 max-w-md leading-7 text-slate-500">
-                Designed for bedrooms, offices, and living
-                spaces with minimal operating noise.
-              </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -1458,7 +1792,6 @@ export const Products = () => {
         "
       >
         <div className="mx-auto max-w-5xl">
-
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600">
               Specifications
@@ -1478,7 +1811,6 @@ export const Products = () => {
           </div>
 
           <div className="mt-16 divide-y divide-slate-200">
-
             <div
               ref={addSpecItem}
               className="
@@ -1488,13 +1820,9 @@ export const Products = () => {
                 py-7
               "
             >
-              <span className="text-slate-500">
-                Recommended room size
-              </span>
+              <span className="text-slate-500">Recommended room size</span>
 
-              <span className="font-semibold">
-                Up to 1,000 sq ft
-              </span>
+              <span className="font-semibold">Up to 1,000 sq ft</span>
             </div>
 
             <div
@@ -1506,13 +1834,9 @@ export const Products = () => {
                 py-7
               "
             >
-              <span className="text-slate-500">
-                Filter
-              </span>
+              <span className="text-slate-500">Filter</span>
 
-              <span className="font-semibold">
-                HEPA H14 + Carbon
-              </span>
+              <span className="font-semibold">HEPA H14 + Carbon</span>
             </div>
 
             <div
@@ -1524,13 +1848,9 @@ export const Products = () => {
                 py-7
               "
             >
-              <span className="text-slate-500">
-                Air intake
-              </span>
+              <span className="text-slate-500">Air intake</span>
 
-              <span className="font-semibold">
-                360°
-              </span>
+              <span className="font-semibold">360°</span>
             </div>
 
             <div
@@ -1542,13 +1862,9 @@ export const Products = () => {
                 py-7
               "
             >
-              <span className="text-slate-500">
-                Connectivity
-              </span>
+              <span className="text-slate-500">Connectivity</span>
 
-              <span className="font-semibold">
-                Wi-Fi
-              </span>
+              <span className="font-semibold">Wi-Fi</span>
             </div>
 
             <div
@@ -1560,15 +1876,10 @@ export const Products = () => {
                 py-7
               "
             >
-              <span className="text-slate-500">
-                Voice assistants
-              </span>
+              <span className="text-slate-500">Voice assistants</span>
 
-              <span className="font-semibold">
-                Alexa / Google Home
-              </span>
+              <span className="font-semibold">Alexa / Google Home</span>
             </div>
-
           </div>
         </div>
       </section>
@@ -1583,9 +1894,10 @@ export const Products = () => {
           mx-auto
           max-w-7xl
           px-6
-          pb-24
+         py-8
+         lg:py-24
           lg:px-8
-          lg:pb-36
+         
         "
       >
         <div
@@ -1617,7 +1929,6 @@ export const Products = () => {
           />
 
           <div className="relative z-10">
-
             <p
               className="
                 text-sm
@@ -1643,9 +1954,7 @@ export const Products = () => {
               "
             >
               Bring intelligent air
-              <span className="block text-slate-500">
-                into your home.
-              </span>
+              <span className="block text-slate-500">into your home.</span>
             </h2>
 
             <p
@@ -1657,15 +1966,14 @@ export const Products = () => {
                 text-slate-400
               "
             >
-              AEROX combines powerful purification with
-              intelligent technology to create a cleaner,
-              healthier-feeling space.
+              AEROX combines powerful purification with intelligent technology
+              to create a cleaner, healthier-feeling space.
             </p>
 
             <div className="mt-10">
-
-              <button
-                className="
+              <Link to="/shop">
+                <button
+                  className="
                   group
                   inline-flex
                   items-center
@@ -1681,20 +1989,19 @@ export const Products = () => {
                   hover:-translate-y-1
                   hover:shadow-2xl
                 "
-              >
-                Buy AEROX
-
-                <i
-                  className="
+                >
+                  Buy AEROX
+                  <i
+                    className="
                     ri-arrow-right-up-line
                     transition-transform
                     duration-300
                     group-hover:translate-x-1
                     group-hover:-translate-y-1
                   "
-                />
-              </button>
-
+                  />
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -1702,5 +2009,3 @@ export const Products = () => {
     </main>
   );
 };
-
- 

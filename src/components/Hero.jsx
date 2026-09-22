@@ -2,6 +2,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -637,7 +638,10 @@ export const Hero = () => {
               hover:text-white
             "
           >
+
+            <Link to="/about" className="flex items-center gap-4">
             <span>Learn More</span>
+            </Link>
 
             <span
               className="
@@ -952,7 +956,9 @@ export const Hero = () => {
           hover:bg-gray-800
         "
             >
+              <Link to="/shop">
               <span>Explore Product</span>
+              </Link>
 
               <span
                 className="

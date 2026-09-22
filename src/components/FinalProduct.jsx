@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -363,11 +364,13 @@ export const FinalProduct = () => {
                 transition-all
                 duration-300
                 hover:gap-6
-                hover:bg-black
+                hover:bg-gray-400
                 hover:px-8
               "
             >
+              <Link to="/shop">
               <span>Buy AEROX</span>
+              </Link>
 
               <span
                 className="

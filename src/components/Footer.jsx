@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,7 +35,7 @@ const Footer = () => {
           y: 0,
           duration: 0.6,
           ease: "power3.out",
-        }
+        },
       )
 
         .fromTo(
@@ -51,7 +52,7 @@ const Footer = () => {
             duration: 1.2,
             ease: "power4.out",
           },
-          "-=0.25"
+          "-=0.25",
         )
 
         .fromTo(
@@ -67,7 +68,7 @@ const Footer = () => {
             stagger: 0.12,
             ease: "power3.out",
           },
-          "-=0.5"
+          "-=0.5",
         )
 
         .fromTo(
@@ -80,10 +81,10 @@ const Footer = () => {
             duration: 0.8,
             ease: "power2.out",
           },
-          "-=0.2"
+          "-=0.2",
         );
     },
-    { scope: footerRef }
+    { scope: footerRef },
   );
 
   return (
@@ -157,6 +158,7 @@ const Footer = () => {
           </h2>
 
           <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center">
+             <Link to="/shop">
             <button
               className="
                 group
@@ -176,10 +178,13 @@ const Footer = () => {
                 transition-all
                 duration-300
                 hover:gap-6
-                hover:bg-white/90
+                hover:bg-gray-400
+                cursor-pointer
               "
             >
-              <span>Buy AEROX</span>
+             
+                <span>Buy AEROX</span>
+           
 
               <span
                 className="
@@ -199,6 +204,7 @@ const Footer = () => {
                 <i className="ri-arrow-right-line" />
               </span>
             </button>
+            </Link>
 
             <span className="text-sm text-white/30">
               Intelligent air purification.
@@ -235,8 +241,8 @@ const Footer = () => {
             </h3>
 
             <p className="mt-5 max-w-xs text-sm leading-6 text-white/35">
-              Advanced air purification designed for cleaner spaces,
-              quieter moments and smarter living.
+              Advanced air purification designed for cleaner spaces, quieter
+              moments and smarter living.
             </p>
 
             {/* Social Icons */}
@@ -345,37 +351,25 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-4 text-sm text-white/45">
               <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="#" className="transition-colors hover:text-white">
                   AEROX
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="#" className="transition-colors hover:text-white">
                   Technology
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="#" className="transition-colors hover:text-white">
                   Air Quality
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="#" className="transition-colors hover:text-white">
                   Specifications
                 </a>
               </li>
@@ -391,37 +385,25 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-4 text-sm text-white/45">
               <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="#" className="transition-colors hover:text-white">
                   Contact
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="#" className="transition-colors hover:text-white">
                   FAQ
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="#" className="transition-colors hover:text-white">
                   Shipping
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="#" className="transition-colors hover:text-white">
                   Returns
                 </a>
               </li>
@@ -498,36 +480,23 @@ const Footer = () => {
             sm:justify-between
           "
         >
-          <span>
-            © 2026 AEROX. All rights reserved.
-          </span>
+          <span>© 2026 AEROX. All rights reserved.</span>
 
           <div className="flex gap-6">
-            <a
-              href="#"
-              className="transition-colors hover:text-white/60"
-            >
+            <a href="#" className="transition-colors hover:text-white/60">
               Privacy
             </a>
 
-            <a
-              href="#"
-              className="transition-colors hover:text-white/60"
-            >
+            <a href="#" className="transition-colors hover:text-white/60">
               Terms
             </a>
 
-            <a
-              href="#"
-              className="transition-colors hover:text-white/60"
-            >
+            <a href="#" className="transition-colors hover:text-white/60">
               Cookies
             </a>
           </div>
 
-          <span>
-            Designed for better breathing
-          </span>
+          <span>Designed for better breathing</span>
         </div>
       </div>
     </footer>
