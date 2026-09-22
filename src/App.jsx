@@ -1,28 +1,31 @@
-import Hero from './components/Hero'
-import Navbar from './components/Navbar'
-import 'remixicon/fonts/remixicon.css'
-import Problem from './components/Problem'
-import Technology from './components/Technology'
-import FilteringProcess from './components/FilteringProcess'
-import Product from './components/Product'
-import FinalProduct from './components/ProductCard'
-import Footer from './components/Footer'
-import ProductGallery from './components/ProductImage'
+import "remixicon/fonts/remixicon.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import { Home } from "./pages/Home";
+import Contact from "./pages/Contact";
+import { Products } from "./pages/Products";
+import { Shop } from "./pages/Shop";
+import About from "./pages/About";
 
 const App = () => {
   return (
-    <>
-      <Navbar/>
-      <Hero/>
-      <Problem/>
-      <ProductGallery/>
-      <Technology/>
-      <FilteringProcess/>
-      <Product/>
-      <FinalProduct/>
-      <Footer/>
-    </>
-  )
-}
+    <BrowserRouter>
+      <Navbar />
 
-export default App
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
+  );
+};
+
+export default App;

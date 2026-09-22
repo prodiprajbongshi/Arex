@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Problem = () => {
+export const Problem = () => {
   const ProblemSectionRef = useRef(null);
   const ProblemLabelRef = useRef(null);
   const ProblemDescriptionRef = useRef(null);
@@ -343,4 +343,4 @@ const Problem = () => {
   );
 };
 
-export default Problem;
+  

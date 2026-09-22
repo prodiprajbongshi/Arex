@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FilteringProcess = () => {
+export const FilteringProcess = () => {
   const FilterSectionRef = useRef(null);
 
   const FilterFlowRef = useRef(null);
@@ -891,4 +891,4 @@ const FilteringProcess = () => {
   );
 };
 
-export default FilteringProcess;
+  

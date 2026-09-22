@@ -11,10 +11,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Products", href: "#products" },
-    { name: "Shop", href: "#shop" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Products", href: "/products" },
+    { name: "Shop", href: "/shop" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -32,7 +33,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <a
-          href="#"
+          href="/"
           className="text-xl font-bold tracking-tight text-white transition-opacity duration-300 hover:opacity-80 sm:text-2xl"
           aria-label="Dreo Home"
         >
@@ -81,7 +82,7 @@ const Navbar = () => {
 
           {/* CTA */}
           <a
-            href="#contact"
+            href="/contact"
             className="
               ml-2 rounded-full bg-white px-5 py-2.5
               text-xs font-semibold tracking-wide text-black

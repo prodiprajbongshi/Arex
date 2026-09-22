@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 
-const ProductGallery = () => {
+export const ProductGallery = () => {
   const [activeImage, setActiveImage] = useState(0);
 
   const imageRef = useRef(null);
@@ -636,4 +636,4 @@ const ProductGallery = () => {
   );
 };
 
-export default ProductGallery;
+ 

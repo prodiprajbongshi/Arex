@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Technology = () => {
+export const Technology = () => {
 
   const TechnologySectionRef = useRef(null);
   const TechnologyLabelRef = useRef(null);
@@ -815,4 +815,4 @@ const Technology = () => {
   )
 }
 
-export default Technology
+  

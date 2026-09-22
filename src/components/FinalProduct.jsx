@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FinalProduct = () => {
+export const FinalProduct = () => {
   const sectionRef = useRef(null);
 
   const productRef = useRef(null);
@@ -419,4 +419,4 @@ const FinalProduct = () => {
   );
 };
 
-export default FinalProduct;
+ 

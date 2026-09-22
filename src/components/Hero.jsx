@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App() {
+export const Hero = () => {
   const HeroRef = useRef(null);
   const HeroImageWrapper = useRef(null);
   const HeroImage = useRef(null);
@@ -418,7 +418,7 @@ function App() {
 
         <div
           ref={HeroImageWrapper}
-          className="absolute bottom-30 md:bottom-10 left-10        z-20 w-[70%]  md:w-[40%] lg:w-[24%]"
+          className="absolute bottom-30 md:bottom-10 left-10 lg:left-30        z-20 w-[70%]  md:w-[40%] lg:w-[24%]"
         >
           <img
             ref={HeroImage}
@@ -1014,4 +1014,4 @@ function App() {
   );
 }
 
-export default App;
+ 

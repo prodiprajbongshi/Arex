@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Product = () => {
+export const Product = () => {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const cardsRef = useRef([]);
@@ -489,4 +489,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+ 
