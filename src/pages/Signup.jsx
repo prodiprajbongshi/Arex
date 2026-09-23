@@ -45,7 +45,7 @@ export const Signup = () => {
             scale: 0.97,
             duration: 0.9,
           },
-          "-=0.3"
+          "-=0.3",
         )
         .from(
           ".signup-item",
@@ -55,7 +55,7 @@ export const Signup = () => {
             stagger: 0.06,
             duration: 0.5,
           },
-          "-=0.4"
+          "-=0.4",
         );
 
       gsap.to(".signup-orb-one", {
@@ -87,7 +87,7 @@ export const Signup = () => {
     },
     {
       scope: pageRef,
-    }
+    },
   );
 
   /* =========================
@@ -110,13 +110,7 @@ export const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const {
-      firstName,
-      lastName,
-      email,
-      password,
-      confirmPassword,
-    } = formData;
+    const { firstName, lastName, email, password, confirmPassword } = formData;
 
     if (!firstName.trim()) {
       toast.error("Please enter your first name.");
@@ -177,9 +171,7 @@ export const Signup = () => {
   ========================= */
 
   const handleGoogleSignup = () => {
-    toast("Google signup will be available soon.", {
-      
-    });
+    toast("Google signup will be available soon.", {});
   };
 
   return (
@@ -199,7 +191,6 @@ export const Signup = () => {
       ========================================= */}
 
       <div className="pointer-events-none absolute inset-0">
-
         <div
           className="
             signup-orb-one
@@ -267,9 +258,10 @@ export const Signup = () => {
           justify-center
         "
       >
-        <div className="w-full max-w-1/2">
-
-      
+        <div className=" w-full
+            max-w-md
+  
+            lg:max-w-2xl  ">
           {/* =========================================
               SIGNUP CARD
           ========================================= */}
@@ -288,7 +280,6 @@ export const Signup = () => {
               sm:p-9
             "
           >
-
             {/* Glow */}
 
             <div
@@ -303,13 +294,11 @@ export const Signup = () => {
             />
 
             <div className="relative">
-
               {/* =========================================
                   HEADING
               ========================================= */}
 
               <div className="signup-item mb-8">
-
                 <div
                   className="
                     mb-5
@@ -342,8 +331,7 @@ export const Signup = () => {
                     text-slate-400
                   "
                 >
-                  Join AEROX and make your shopping
-                  experience smarter.
+                  Join AEROX and make your shopping experience smarter.
                 </p>
               </div>
 
@@ -351,19 +339,13 @@ export const Signup = () => {
                   FORM
               ========================================= */}
 
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-5"
-              >
-
+              <form onSubmit={handleSubmit} className="space-y-5">
                 {/* FIRST + LAST NAME */}
 
                 <div className="grid gap-5 sm:grid-cols-2">
-
                   {/* FIRST NAME */}
 
                   <div className="signup-item">
-
                     <label
                       htmlFor="firstName"
                       className="
@@ -378,7 +360,6 @@ export const Signup = () => {
                     </label>
 
                     <div className="group relative">
-
                       <i
                         className="
                           ri-user-line
@@ -426,7 +407,6 @@ export const Signup = () => {
                   {/* LAST NAME */}
 
                   <div className="signup-item">
-
                     <label
                       htmlFor="lastName"
                       className="
@@ -441,7 +421,6 @@ export const Signup = () => {
                     </label>
 
                     <div className="group relative">
-
                       <i
                         className="
                           ri-user-line
@@ -490,7 +469,6 @@ export const Signup = () => {
                 {/* EMAIL */}
 
                 <div className="signup-item">
-
                   <label
                     htmlFor="email"
                     className="
@@ -505,7 +483,6 @@ export const Signup = () => {
                   </label>
 
                   <div className="group relative">
-
                     <i
                       className="
                         ri-mail-line
@@ -553,7 +530,6 @@ export const Signup = () => {
                 {/* PASSWORD */}
 
                 <div className="signup-item">
-
                   <label
                     htmlFor="password"
                     className="
@@ -568,7 +544,6 @@ export const Signup = () => {
                   </label>
 
                   <div className="group relative">
-
                     <i
                       className="
                         ri-lock-line
@@ -585,11 +560,7 @@ export const Signup = () => {
                     <input
                       id="password"
                       name="password"
-                      type={
-                        showPassword
-                          ? "text"
-                          : "password"
-                      }
+                      type={showPassword ? "text" : "password"}
                       value={formData.password}
                       onChange={handleChange}
                       placeholder="Create a password"
@@ -617,9 +588,7 @@ export const Signup = () => {
 
                     <button
                       type="button"
-                      onClick={() =>
-                        setShowPassword((prev) => !prev)
-                      }
+                      onClick={() => setShowPassword((prev) => !prev)}
                       className="
                         absolute
                         right-3
@@ -653,7 +622,6 @@ export const Signup = () => {
                 {/* CONFIRM PASSWORD */}
 
                 <div className="signup-item">
-
                   <label
                     htmlFor="confirmPassword"
                     className="
@@ -668,7 +636,6 @@ export const Signup = () => {
                   </label>
 
                   <div className="group relative">
-
                     <i
                       className="
                         ri-lock-password-line
@@ -685,11 +652,7 @@ export const Signup = () => {
                     <input
                       id="confirmPassword"
                       name="confirmPassword"
-                      type={
-                        showConfirmPassword
-                          ? "text"
-                          : "password"
-                      }
+                      type={showConfirmPassword ? "text" : "password"}
                       value={formData.confirmPassword}
                       onChange={handleChange}
                       placeholder="Confirm your password"
@@ -717,11 +680,7 @@ export const Signup = () => {
 
                     <button
                       type="button"
-                      onClick={() =>
-                        setShowConfirmPassword(
-                          (prev) => !prev
-                        )
-                      }
+                      onClick={() => setShowConfirmPassword((prev) => !prev)}
                       className="
                         absolute
                         right-3
@@ -751,7 +710,6 @@ export const Signup = () => {
                 {/* TERMS */}
 
                 <div className="signup-item pt-1">
-
                   <label
                     className="
                       flex
@@ -763,9 +721,7 @@ export const Signup = () => {
                     <input
                       type="checkbox"
                       checked={agreeTerms}
-                      onChange={(e) =>
-                        setAgreeTerms(e.target.checked)
-                      }
+                      onChange={(e) => setAgreeTerms(e.target.checked)}
                       className="
                         mt-1
                         h-4 w-4
@@ -781,7 +737,7 @@ export const Signup = () => {
                     <span className="text-xs leading-6 text-slate-500">
                       I agree to the{" "}
                       <Link
-                        to="/terms"
+                        to="/privacypolicy"
                         className="
                           text-cyan-400
                           hover:text-cyan-300
@@ -791,7 +747,7 @@ export const Signup = () => {
                       </Link>{" "}
                       and{" "}
                       <Link
-                        to="/privacy"
+                        to="/returns"
                         className="
                           text-cyan-400
                           hover:text-cyan-300
@@ -807,7 +763,6 @@ export const Signup = () => {
                 {/* SIGNUP BUTTON */}
 
                 <div className="signup-item pt-2">
-
                   <button
                     type="submit"
                     className="
@@ -841,7 +796,6 @@ export const Signup = () => {
                       "
                     >
                       Create Account
-
                       <i
                         className="
                           ri-arrow-right-line
@@ -883,55 +837,19 @@ export const Signup = () => {
               >
                 <div className="h-px flex-1 bg-white/10" />
 
-                <span className="text-xs text-slate-600">
-                  OR
-                </span>
+                <span className="text-xs text-slate-600">OR</span>
 
                 <div className="h-px flex-1 bg-white/10" />
               </div>
 
-              {/* =========================================
-                  GOOGLE
-              ========================================= */}
-
-              <button
-                type="button"
-                onClick={handleGoogleSignup}
-                className="
-                  signup-item
-                  flex
-                  w-full
-                  items-center
-                  justify-center
-                  gap-3
-                  rounded-xl
-                  border border-white/10
-                  bg-white/[0.04]
-                  px-5
-                  py-3.5
-                  text-sm
-                  font-medium
-                  text-slate-200
-                  transition-all
-                  duration-300
-                  hover:border-white/20
-                  hover:bg-white/[0.08]
-                "
-              >
-                <i className="ri-google-fill text-lg" />
-
-                Continue with Google
-              </button>
-
+             
               {/* =========================================
                   LOGIN LINK
               ========================================= */}
 
               <div className="signup-item mt-7 text-center">
-
                 <p className="text-sm text-slate-500">
                   Already have an account?{" "}
-
                   <Link
                     to="/login"
                     className="
@@ -947,52 +865,8 @@ export const Signup = () => {
               </div>
             </div>
           </div>
-
-          {/* =========================================
-              FOOTER LINKS
-          ========================================= */}
-
-          <div
-            className="
-              signup-item
-              mt-7
-              flex
-              items-center
-              justify-center
-              gap-5
-              text-xs
-              text-slate-600
-            "
-          >
-            <Link
-              to="/privacy"
-              className="transition-colors hover:text-slate-400"
-            >
-              Privacy
-            </Link>
-
-            <span>•</span>
-
-            <Link
-              to="/cookies"
-              className="transition-colors hover:text-slate-400"
-            >
-              Cookies
-            </Link>
-
-            <span>•</span>
-
-            <Link
-              to="/contact"
-              className="transition-colors hover:text-slate-400"
-            >
-              Support
-            </Link>
-          </div>
         </div>
       </div>
     </main>
   );
 };
-
- 

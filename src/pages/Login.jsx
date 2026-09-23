@@ -1,4 +1,4 @@
-import   { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Link, useNavigate } from "react-router-dom";
@@ -143,16 +143,6 @@ export const Login = () => {
   };
 
   /* =========================
-     GOOGLE LOGIN
-  ========================= */
-
-  const handleGoogleLogin = () => {
-    toast("Google login will be available soon.", {
-      icon: "🔐",
-    });
-  };
-
-  /* =========================
      FORGOT PASSWORD
   ========================= */
 
@@ -166,11 +156,17 @@ export const Login = () => {
     <main
       ref={pageRef}
       className="
-        relative min-h-screen
+        relative
+        min-h-screen
         overflow-hidden
         bg-slate-950
-        px-52 py-10
-        sm:px-8
+        px-4
+        py-8
+        sm:px-6
+        sm:py-10
+        md:px-8
+        lg:px-12
+        xl:px-16
       "
     >
       {/* =========================================
@@ -184,11 +180,17 @@ export const Login = () => {
         <div
           className="
             login-orb-one
-            absolute -left-32 top-10
-            h-80 w-80
+            absolute
+            -left-32
+            top-10
+            h-64
+            w-64
             rounded-full
             bg-cyan-500/15
-            blur-[120px]
+            blur-[100px]
+            sm:h-80
+            sm:w-80
+            sm:blur-[120px]
           "
         />
 
@@ -197,11 +199,19 @@ export const Login = () => {
         <div
           className="
             login-orb-two
-            absolute -right-32 bottom-10
-            h-96 w-96
+            absolute
+            -bottom-20
+            -right-20
+            h-72
+            w-72
             rounded-full
             bg-blue-600/15
-            blur-[130px]
+            blur-[110px]
+            sm:-right-32
+            sm:bottom-10
+            sm:h-96
+            sm:w-96
+            sm:blur-[130px]
           "
         />
 
@@ -209,12 +219,20 @@ export const Login = () => {
 
         <div
           className="
-            absolute left-1/2 top-1/2
-            h-[600px] w-[600px]
+            absolute
+            left-1/2
+            top-1/2
+            h-[380px]
+            w-[380px]
             -translate-x-1/2
             -translate-y-1/2
             rounded-full
-            border border-cyan-400/[0.04]
+            border
+            border-cyan-400/[0.04]
+            sm:h-[500px]
+            sm:w-[500px]
+            md:h-[600px]
+            md:w-[600px]
           "
         />
 
@@ -223,12 +241,20 @@ export const Login = () => {
         <div
           className="
             login-ring
-            absolute left-1/2 top-1/2
-            h-[500px] w-[500px]
+            absolute
+            left-1/2
+            top-1/2
+            h-[300px]
+            w-[300px]
             -translate-x-1/2
             -translate-y-1/2
             rounded-full
-            border border-cyan-400/[0.05]
+            border
+            border-cyan-400/[0.05]
+            sm:h-[420px]
+            sm:w-[420px]
+            md:h-[500px]
+            md:w-[500px]
           "
         />
 
@@ -236,7 +262,8 @@ export const Login = () => {
 
         <div
           className="
-            absolute inset-0
+            absolute
+            inset-0
             bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.035)_1px,transparent_1px)]
             [background-size:32px_32px]
           "
@@ -249,15 +276,24 @@ export const Login = () => {
 
       <div
         className="
-          relative z-10
-          flex min-h-[calc(100vh-80px)]
+          relative
+          z-10
+          flex
+          min-h-[calc(100vh-64px)]
           items-center
           justify-center
+          sm:min-h-[calc(100vh-80px)]
         "
       >
-        <div className="w-full max-w-1/3">
-
-      
+        <div
+          className="
+            w-full
+            max-w-md
+  
+            lg:max-w-lg
+ 
+          "
+        >
 
           {/* =========================================
               LOGIN CARD
@@ -269,12 +305,14 @@ export const Login = () => {
               relative
               overflow-hidden
               rounded-[2rem]
-              border border-white/10
+              border
+              border-white/10
               bg-white/[0.055]
-              p-7
+              p-6
               shadow-[0_30px_100px_rgba(0,0,0,0.35)]
               backdrop-blur-2xl
-              
+              sm:p-7
+              md:p-9
             "
           >
 
@@ -283,11 +321,17 @@ export const Login = () => {
             <div
               className="
                 pointer-events-none
-                absolute -right-24 -top-24
-                h-56 w-56
+                absolute
+                -right-24
+                -top-24
+                h-48
+                w-48
                 rounded-full
                 bg-cyan-400/10
-                blur-[80px]
+                blur-[70px]
+                sm:h-56
+                sm:w-56
+                sm:blur-[80px]
               "
             />
 
@@ -297,13 +341,16 @@ export const Login = () => {
                   HEADING
               ========================================= */}
 
-              <div className="login-item mb-8">
+              <div className="login-item mb-7 sm:mb-8">
 
                 <div
                   className="
                     mb-5
-                    flex h-14 w-14
-                    items-center justify-center
+                    flex
+                    h-14
+                    w-14
+                    items-center
+                    justify-center
                     rounded-2xl
                     bg-cyan-400/10
                     text-cyan-300
@@ -314,10 +361,11 @@ export const Login = () => {
 
                 <h1
                   className="
-                    text-3xl
+                    text-2xl
                     font-semibold
                     tracking-tight
                     text-white
+                    sm:text-3xl
                   "
                 >
                   Welcome back
@@ -326,6 +374,7 @@ export const Login = () => {
                 <p
                   className="
                     mt-2
+                    max-w-sm
                     text-sm
                     leading-6
                     text-slate-400
@@ -387,8 +436,10 @@ export const Login = () => {
                       autoComplete="email"
                       className="
                         w-full
+                        min-w-0
                         rounded-xl
-                        border border-white/10
+                        border
+                        border-white/10
                         bg-white/[0.045]
                         py-3.5
                         pl-11
@@ -412,7 +463,7 @@ export const Login = () => {
 
                 <div className="login-item">
 
-                  <div className="mb-2 flex items-center justify-between">
+                  <div className="mb-2 flex items-center justify-between gap-3">
 
                     <label
                       htmlFor="password"
@@ -430,6 +481,7 @@ export const Login = () => {
                       type="button"
                       onClick={handleForgotPassword}
                       className="
+                        shrink-0
                         text-xs
                         font-medium
                         text-cyan-400
@@ -470,8 +522,10 @@ export const Login = () => {
                       autoComplete="current-password"
                       className="
                         w-full
+                        min-w-0
                         rounded-xl
-                        border border-white/10
+                        border
+                        border-white/10
                         bg-white/[0.045]
                         py-3.5
                         pl-11
@@ -498,9 +552,11 @@ export const Login = () => {
                       }
                       className="
                         absolute
-                        right-3
+                        right-2
                         top-1/2
-                        flex h-9 w-9
+                        flex
+                        h-9
+                        w-9
                         -translate-y-1/2
                         items-center
                         justify-center
@@ -509,6 +565,7 @@ export const Login = () => {
                         transition-colors
                         hover:bg-white/5
                         hover:text-cyan-300
+                        sm:right-3
                       "
                       aria-label={
                         showPassword
@@ -546,7 +603,9 @@ export const Login = () => {
                         setRememberMe(e.target.checked)
                       }
                       className="
-                        h-4 w-4
+                        h-4
+                        w-4
+                        shrink-0
                         cursor-pointer
                         rounded
                         border-slate-600
@@ -590,7 +649,8 @@ export const Login = () => {
                   >
                     <span
                       className="
-                        relative z-10
+                        relative
+                        z-10
                         flex
                         items-center
                         justify-center
@@ -634,15 +694,16 @@ export const Login = () => {
               <div
                 className="
                   login-item
-                  my-7
+                  my-6
                   flex
                   items-center
                   gap-4
+                  sm:my-7
                 "
               >
                 <div className="h-px flex-1 bg-white/10" />
 
-                <span className="text-xs text-slate-600">
+                <span className="shrink-0 text-xs text-slate-600">
                   OR
                 </span>
 
@@ -650,43 +711,10 @@ export const Login = () => {
               </div>
 
               {/* =========================================
-                  GOOGLE LOGIN
-              ========================================= */}
-
-              <button
-                type="button"
-                onClick={handleGoogleLogin}
-                className="
-                  login-item
-                  flex
-                  w-full
-                  items-center
-                  justify-center
-                  gap-3
-                  rounded-xl
-                  border border-white/10
-                  bg-white/[0.04]
-                  px-5
-                  py-3.5
-                  text-sm
-                  font-medium
-                  text-slate-200
-                  transition-all
-                  duration-300
-                  hover:border-white/20
-                  hover:bg-white/[0.08]
-                "
-              >
-                <i className="ri-google-fill text-lg" />
-
-                Continue with Google
-              </button>
-
-              {/* =========================================
                   REGISTER
               ========================================= */}
 
-              <div className="login-item mt-7 text-center">
+              <div className="login-item mt-6 text-center sm:mt-7">
 
                 <p className="text-sm text-slate-500">
                   Don't have an account?{" "}
@@ -706,52 +734,9 @@ export const Login = () => {
               </div>
             </div>
           </div>
-
-          {/* =========================================
-              FOOTER LINKS
-          ========================================= */}
-
-          <div
-            className="
-              login-item
-              mt-7
-              flex
-              items-center
-              justify-center
-              gap-5
-              text-xs
-              text-slate-600
-            "
-          >
-            <Link
-              to="/privacy"
-              className="transition-colors hover:text-slate-400"
-            >
-              Privacy
-            </Link>
-
-            <span>•</span>
-
-            <Link
-              to="/cookies"
-              className="transition-colors hover:text-slate-400"
-            >
-              Cookies
-            </Link>
-
-            <span>•</span>
-
-            <Link
-              to="/contact"
-              className="transition-colors hover:text-slate-400"
-            >
-              Support
-            </Link>
-          </div>
+ 
         </div>
       </div>
     </main>
   );
 };
-
- 
